@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link href='style.css' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+
+    <h1 class="heading">Weather App</h1>
+
+    <div id="search">
+      <input type="text" placeholder="Enter Your City" id="city">
+      <button id="btn">Search</button>
+    </div>
+
+    <div class="weather">
+
+      <div id="currentWeather">
+        <div></div>
+        <div class="currentDetails"></div>
+        <div class="currentDetails"></div>
+        <div class="currentDetails"></div>
+        <div class="currentDetails"></div>
+      </div>
+
+      <div id="hourlyWeather">
+        <div class="hourly">
+          <div>12:00AM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>01:00AM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>02:00AM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>03:00AM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>04:00AM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>05:00AM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>06:00AM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>07:00AM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>08:00AM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>09:00AM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>10:00AM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>11:00AM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>12:00PM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>01:00PM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>02:00PM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>03:00PM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>04:00PM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>05:00PM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>06:00PM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>07:00PM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>08:00PM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>09:00PM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>10:00PM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+        <div class="hourly">
+          <div>11:00PM</div>
+          <div></div>
+          <div class="hourTemp"></div>
+        </div>
+      </div>
+
+      <div id="weeklyWeather">
+        <h2 class="heading">Weekly Forecast</h2>
+
+        <div class="weekly">
+          <div class="weeklyDetails"></div>
+          <div class="weeklyDetails"></div>
+          <div></div>
+          <div class="weeklyDetails"></div>
+        </div>
+
+        <div class="weekly">
+          <div class="weeklyDetails"></div>
+          <div class="weeklyDetails"></div>
+          <div></div>
+          <div class="weeklyDetails"></div>
+        </div>
+
+        <div class="weekly">
+          <div class="weeklyDetails"></div>
+          <div class="weeklyDetails"></div>
+          <div>icon</div>
+          <div class="weeklyDetails"></div>
+        </div>
+
+        <div class="weekly">
+          <div class="weeklyDetails"></div>
+          <div class="weeklyDetails"></div>
+          <div></div>
+          <div class="weeklyDetails"></div>
+        </div>
+
+        <div class="weekly">
+          <div class="weeklyDetails"></div>
+          <div class="weeklyDetails"></div>
+          <div ></div>
+          <div class="weeklyDetails"></div>
+        </div>
+
+        <div class="weekly">
+          <div class="weeklyDetails"></div>
+          <div class="weeklyDetails"></div>
+          <div></div>
+          <div class="weeklyDetails"></div>
+        </div>
+
+        <div class="weekly">
+          <div class="weeklyDetails"></div>
+          <div class="weeklyDetails"></div>
+          <div></div>
+          <div class="weeklyDetails"></div>
+        </div>
+
+      </div>
+
+      <div id="misc">
+
+        <div class="extra">
+          <div class="extraIcon"><i class="fa-solid fa-sun"></i></i></div>
+          <div>UV</div>
+          <div></div>
+        </div>
+
+        <div class="extra">
+          <div class="extraIcon"><i class="fa-solid fa-temperature-three-quarters"></i></div>
+          <div>Feels like</div>
+          <div></div>
+        </div>
+
+        <div class="extra">
+          <div class="extraIcon"><i class="fa-solid fa-droplet"></i></div>
+          <div>Humidity</div>
+          <div></div>
+        </div>
+
+        <div class="extra">
+          <div class="extraIcon"><i class="fa-solid fa-wind"></i></div>
+          <div>Wind</div>
+          <div></div>
+        </div>
+
+        <div class="extra">
+          <div class="extraIcon"><i class="fa-solid fa-tornado"></i></div>
+          <div>Air Pressure</div>
+          <div></div>
+        </div>
+
+        <div class="extra">
+          <div class="extraIcon"><i class="fa-solid fa-eye"></i></div>
+          <div>Visibility</div>
+          <div></div>
+        </div>
+
+      </div>
+
+      <div id="sun">
+
+        <div id="sunRise">
+          <div id="riseIcon"><img src="images/sun_rise.png" alt="" width="64px" height="64px"></div>
+          <div id="riseText">Sunrise</div>
+          <div id="riseTime">05:27AM</div>
+        </div>
+
+        <div id="sunSet">
+          <div id="setIcon"><img src="images/sun_set.png" alt="" width="64px" height="64px"></div>
+          <div id="setText">Sunset</div>
+          <div id="setTime">07:01PM</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script defer type="text/javascript" src="script.js"></script>
+  <script src="https://kit.fontawesome.com/d4426e17a3.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
