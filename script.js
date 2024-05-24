@@ -5,7 +5,7 @@ const hourly = document.querySelector("#hourlyWeather");
 const weekly = document.querySelector("#weeklyWeather");
 const extra = document.querySelector("#misc");
 const sun = document.querySelector("#sun");
-let newHeading;
+const errorText = document.querySelector("#errorText");
 
 button.addEventListener("click", () => {
   fetchData();
@@ -15,82 +15,94 @@ async function fetchData() {
   let city = cityName.value;
   const API_KEY = "9e5fc5ccc80849e6be921941241905";
   const URL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=7&aqi=yes&alerts=no`;
-  let response = await fetch(URL);
-  weatherData = await response.json();
-  console.log(weatherData);
-  currentData(weatherData);
+  try {
+    let response = await fetch(URL);
+    weatherData = await response.json();
+
+    if (response.ok) {
+      console.log(weatherData);
+      showWeather();
+    } else {
+      showError();
+    }
+  } catch (error) {
+    console.log("No matching location found. Please try again....");
+  }
 }
 
-let currentData = (weatherData) => {
-  if (!weatherData.error) {
-    if (newHeading) {
-      newHeading.remove();
-    }
-
-    currentWeather.style.display = "flex";
-    hourly.style.display = "flex";
-    weekly.style.display = "flex";
-    extra.style.display = "flex";
-    sun.style.display = "flex";
-
-    let currentTemp = Math.round(`${weatherData.current.temp_c}`);
-    let currentMinTemp = Math.round(
-      `${weatherData.forecast.forecastday[0].day.mintemp_c}`
-    );
-    let currentMaxTemp = Math.round(
-      `${weatherData.forecast.forecastday[0].day.maxtemp_c}`
-    );
-    let airQuality = `${weatherData.current.air_quality["us-epa-index"]}`;
-
-    currentWeather.children[0].innerHTML = `<img src="${weatherData.current.condition.icon}" alt="">`;
-    currentWeather.children[1].innerHTML = `${currentTemp}°C`;
-    currentWeather.children[2].innerHTML = `${weatherData.current.condition.text}`;
-    currentWeather.children[3].innerHTML = `${currentMinTemp}°C / ${currentMaxTemp}°C`;
-    switch (airQuality) {
-      case "1":
-        currentWeather.children[4].innerHTML = `Air Quality : Good`;
-        break;
-      case "2":
-        currentWeather.children[4].innerHTML = `Air Quality : Moderate`;
-        break;
-      case "3":
-        currentWeather.children[4].innerHTML = `Air Quality : Unhealthy for sensitive group`;
-        break;
-      case "4":
-        currentWeather.children[4].innerHTML = `Air Quality : Unhealthy`;
-        break;
-      case "5":
-        currentWeather.children[4].innerHTML = `Air Quality : Very Unhealthy`;
-        break;
-      case "6":
-        currentWeather.children[4].innerHTML = `Air Quality : Hazardous`;
-        break;
-      default:
-        currentWeather.children[4].innerHTML = `Air Quality : Not Available`;
-        break;
-    }
-    hourlyData(weatherData);
-  } else {
-    newHeading = document.createElement("h2");
-    newHeading.innerHTML = `No matching location found. Please try again....`;
-
-    currentWeather.before(newHeading);
-    currentWeather.style.display = "none";
-    hourly.style.display = "none";
-    weekly.style.display = "none";
-    extra.style.display = "none";
-    sun.style.display = "none";
+let showWeather = () => {
+  currentWeather.style.display = "flex";
+  hourly.style.display = "flex";
+  weekly.style.display = "flex";
+  extra.style.display = "flex";
+  sun.style.display = "flex";
+  currentData(weatherData);
+  
+  if(errorText.style.display === "block") {
+    errorText.style.display === "none";
   }
+};
+
+let showError = () => {
+  errorText.style.display = "block";
+  currentWeather.style.display = "none";
+  hourly.style.display = "none";
+  weekly.style.display = "none";
+  extra.style.display = "none";
+  sun.style.display = "none";
+};
+
+let currentData = (weatherData) => {
+  let currentTemp = Math.round(`${weatherData.current.temp_c}`);
+  let currentMinTemp = Math.round(
+    `${weatherData.forecast.forecastday[0].day.mintemp_c}`
+  );
+  let currentMaxTemp = Math.round(
+    `${weatherData.forecast.forecastday[0].day.maxtemp_c}`
+  );
+  let airQuality = `${weatherData.current.air_quality["us-epa-index"]}`;
+
+  currentWeather.children[0].innerHTML = `<img src="${weatherData.current.condition.icon}" alt="">`;
+  currentWeather.children[1].innerHTML = `${currentTemp}°C`;
+  currentWeather.children[2].innerHTML = `${weatherData.current.condition.text}`;
+  currentWeather.children[3].innerHTML = `${currentMinTemp}°C / ${currentMaxTemp}°C`;
+  switch (airQuality) {
+    case "1":
+      currentWeather.children[4].innerHTML = `Air Quality : Good`;
+      break;
+    case "2":
+      currentWeather.children[4].innerHTML = `Air Quality : Moderate`;
+      break;
+    case "3":
+      currentWeather.children[4].innerHTML = `Air Quality : Unhealthy for sensitive group`;
+      break;
+    case "4":
+      currentWeather.children[4].innerHTML = `Air Quality : Unhealthy`;
+      break;
+    case "5":
+      currentWeather.children[4].innerHTML = `Air Quality : Very Unhealthy`;
+      break;
+    case "6":
+      currentWeather.children[4].innerHTML = `Air Quality : Hazardous`;
+      break;
+    default:
+      currentWeather.children[4].innerHTML = `Air Quality : Not Available`;
+      break;
+  }
+  hourlyData(weatherData);
 };
 
 let hourlyData = (weatherData) => {
   for (let i = 0; i < 24; i++) {
-    hourly.children[i].children[1].innerHTML = `<img src="${weatherData.forecast.forecastday[0].hour[i].condition.icon}" alt="">`;
+    hourly.children[
+      i
+    ].children[1].innerHTML = `<img src="${weatherData.forecast.forecastday[0].hour[i].condition.icon}" alt="">`;
 
-    let hourlyTemp = Math.round(weatherData.forecast.forecastday[0].hour[i].temp_c);
+    let hourlyTemp = Math.round(
+      weatherData.forecast.forecastday[0].hour[i].temp_c
+    );
     hourly.children[i].children[2].innerHTML = `${hourlyTemp}°C`;
   }
-
 
   weeklyData(weatherData);
 };

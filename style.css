@@ -180,3 +180,22 @@ body {
 #sun div {
     line-height: 2rem;
 }
+
+#optional{
+    display: flex;
+    justify-content: center;
+}
+
+#optional h2{
+    margin-top: 0.5rem;
+    width: fit-content;
+    padding: 1.5rem;
+    background-color: #caf0f8;
+    box-shadow: 0.25rem 0.25rem 0.25rem black;
+    font-size: 1.5rem;
+    font-family: "Poetsen One", sans-serif;
+    font-style: normal;
+    border-radius: 1rem;
+    display: none;
+}
+
