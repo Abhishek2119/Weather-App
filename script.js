@@ -37,9 +37,9 @@ let showWeather = () => {
   extra.style.display = "flex";
   sun.style.display = "flex";
   currentData(weatherData);
-  
+
   if(errorText.style.display === "block") {
-    errorText.style.display === "none";
+    errorText.style.display = "none";
   }
 };
 
