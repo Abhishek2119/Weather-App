@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #ade8f4;
+    background-image: url(images/clouds-2203633_1280.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+}
+
+.heading {
+    text-align: center;
+    margin: 1rem;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#search {
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+
+}
+
+#city {
+    padding: 1rem;
+    width: 50%;
+    border-radius: 1rem;
+    font-size: 1rem;
+    box-shadow: 0.25rem 0.25rem 0.25rem black;
+}
+
+#btn {
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-left: 1rem;
+    box-shadow: 0.25rem 0.25rem 0.25rem black;
+}
+
+.weather {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+}
+
+#currentWeather {
+    display: flex;
+    height: fit-content;
+    justify-content: space-around;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    margin: 1rem;
+    display: none;
+    box-shadow: 0.25rem 0.25rem 0.25rem black;
+    background-image: none;
+}
+
+#currentWeather div, #currentWeather div img {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    background-image: none;
+}
+
+.currentDetails {
+    margin-top: 1rem;
+    background-image: none;
+}
+
+#hourlyWeather {
+    /* margin-left: 2rem;
+    margin-right: 2rem; */
+    display: flex;
+    overflow: auto;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    margin: 1rem;
+    display: none;
+    box-shadow: 0.25rem 0.25rem 0.25rem black;
+    background-image: none;
+}
+
+.hourly {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    line-height: 1.5rem;
+    padding: 1rem;
+    font-size: 1.25rem;
+    /* border: 1px solid black; */
+    background-image: none;
+}
+
+.hourTemp{
+    margin-left: 1rem;
+}
+
+.hourly div, .hourly div img{
+    background-image: none;
+}
+
+#weeklyWeather {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 45%;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    margin: 1rem;
+    display: none;
+    box-shadow: 0.25rem 0.25rem 0.25rem black;
+    background-image: none;
+}
+
+#weeklyWeather h2, .weekly div img {
+    background-image: none;
+}
+
+.weekly {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    background-image: none;
+}
+
+.weeklyDetails{
+    margin-top: 1.2rem;
+    background-image: none;
+}
+
+#misc {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    margin: 1rem;
+    display: none;
+    box-shadow: 0.25rem 0.25rem 0.25rem black;
+}
+
+.extra {
+    padding: 1rem;
+    height: fit-content;
+    width: fit-content;
+    font-size: 1.25rem;
+}
+
+.extra div{
+    padding: 0.5rem;
+}
+
+
+.extraIcon{
+    margin-left: 0.5rem;
+}
+
+#sun {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    margin: 1rem;
+    width: 50%;
+    font-size: 1.25rem;
+    display: none;
+    box-shadow: 0.25rem 0.25rem 0.25rem black;
+}
+
+#sun div {
+    line-height: 2rem;
+}
