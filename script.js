@@ -85,15 +85,13 @@ let currentData = (weatherData) => {
 
 let hourlyData = (weatherData) => {
   for (let i = 0; i < 24; i++) {
-    hourly.children[
-      i
-    ].children[1].innerHTML = `<img src="${weatherData.forecast.forecastday[0].hour[i].condition.icon}" alt="">`;
+    hourly.children[i].children[1].innerHTML = `<img src="${weatherData.forecast.forecastday[0].hour[i].condition.icon}" alt="">`;
 
-    let hourlyTemp = Math.round(
-      weatherData.forecast.forecastday[0].hour[i].temp_c
-    );
+    let hourlyTemp = Math.round(weatherData.forecast.forecastday[0].hour[i].temp_c);
     hourly.children[i].children[2].innerHTML = `${hourlyTemp}°C`;
   }
+
+
   weeklyData(weatherData);
 };
 
