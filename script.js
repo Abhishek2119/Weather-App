@@ -15,18 +15,14 @@ async function fetchData() {
   let city = cityName.value;
   const API_KEY = "9e5fc5ccc80849e6be921941241905";
   const URL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=7&aqi=yes&alerts=no`;
-  try {
-    let response = await fetch(URL);
-    weatherData = await response.json();
-
-    if (response.ok) {
-      console.log(weatherData);
-      showWeather();
-    } else {
-      showError();
-    }
-  } catch (error) {
-    console.log("No matching location found. Please try again....");
+  let response = await fetch(URL);
+  weatherData = await response.json();
+  
+  if (response.ok) {
+    console.log(weatherData);
+    showWeather();
+  } else {
+    showError();
   }
 }
 
@@ -38,7 +34,7 @@ let showWeather = () => {
   sun.style.display = "flex";
   currentData(weatherData);
 
-  if(errorText.style.display === "block") {
+  if (errorText.style.display === "block") {
     errorText.style.display = "none";
   }
 };
